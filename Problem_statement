@@ -1,4 +1,3 @@
-Spark Project -1 
 
 Iphone Sales Analysis
 
@@ -8,7 +7,6 @@ An iphone store wants to analyse the daily sales, Store has an application runni
 As a data expert you are supposed to work with multiple teams specially 2 teams one which is collecting the data from user activity(software engineers) and another which wants to analyse the collected data(Business data analyst or data scientist). So basically you are supposed to expose(write) to utilities.
 
 
- 
 Data collector utilities for software engineers
 1.	Sales Data collector utility
 a.	This utility will consume the sales data from a text file with header and will publish the output into a hive partitioned table in parquet format. You can assume sale_date as a partitioned column.
