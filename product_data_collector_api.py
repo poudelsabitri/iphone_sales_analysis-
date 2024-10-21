@@ -14,5 +14,11 @@ def product_data_collector_api(spark, parquet_file_path):
     return "iphone_sales_analysis.product_hive_table"
 
 if __name__ == '__main__':
-    filepath = 'file:///home/takeo/iphone_sales_analysis/product_Table'
-    sales_data_collector_api(spark, filepath)
+       csv_file_path = 'file:///home/takeo/iphone_sales_analysis/product_Table/product_Table_csv'
+    parquet_file_path = 'file:///home/takeo/iphone_sales_analysis/product_Table/product_Table_parquet'
+    #Loading data into  dataFrame
+    df = spark.read.csv(csv_file_path, header = True, inferSchema = True)
+    #Writinh dataFrame to parquet file format
+    df.write.parquet(parquet_file_path, mode = 'overwrite')
+    #Call function product_data_collector_api after the csv data has been converted into parquet data
+    product_data_collector_api(spark, parquet_file_path)
