@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 # Initialize Spark session
-spark = SparkSession.builder.appName("Iphone Sales Analysis").enableHiveSupport().getOrCreate()
+spark = SparkSession.builder.appName(" Sales data collector").enableHiveSupport().getOrCreate()
 
 def sales_data_collector_api(spark, text_file_path):
     # Load the sales data from the given text file with '|' delimiter
@@ -13,5 +13,5 @@ def sales_data_collector_api(spark, text_file_path):
     return "iphone_sales_analysis.sales_hive_table"
 
 if __name__ == '__main__':
-    filepath = 'file:///home/takeo/data/iphone_sales_analysis_project/sales_data'
+    filepath = 'file:///home/takeo/iphone_sales_analysis_project/Sales_Table'
     sales_data_collector_api(spark, filepath)
