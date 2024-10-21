@@ -14,5 +14,5 @@ def product_data_collector_api(spark, parquet_file_path):
     return "iphone_sales_analysis.product_hive_table"
 
 if __name__ == '__main__':
-    filepath = 'file:///home/takeo/iphone_sales_analysis_project/sales_Table'
+    filepath = 'file:///home/takeo/iphone_sales_analysis/product_Table'
     sales_data_collector_api(spark, filepath)
