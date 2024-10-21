@@ -20,5 +20,5 @@ if __name__ == '__main__':
     df = spark.read.csv(csv_file_path, header = True, inferSchema = True)
     #Writinh dataFrame to parquet file format
     df.write.parquet(parquet_file_path, mode = 'overwrite')
-    #Call function product_data_collector_api after the csv data has been converted into parquet data
+    #Calling product_data_collector_api function 
     product_data_collector_api(spark, parquet_file_path)
